@@ -37,9 +37,10 @@ bot.on('ready', function (evt) {
     logger.info('Logged in as: ');
     logger.info(bot.username + ' - (' + bot.id + ')');
     
-    if (fs.existsSync('../trainers.json') == false) { createTrainerFile(); return }
+    if (fs.existsSync('../trainers.json') == false) { createTrainerFile() }
 
     setUpSpawnTimer()
+    return
 
     var rawTrainerData = fs.readFileSync('../trainers.json');
     currentQuizPlayers = JSON.parse(rawTrainerData);

@@ -125,9 +125,16 @@ function setUpSpawnTimer() {
     setTimeout(spawnRandomPokemon, nextSpawnTime, channelToUse)
 }
 
+function askPlayerToJoinList(userID, channelID) {
+    bot.sendMessage({
+        to: channelID,
+        message: "<@" + userID + "> please join the quiz list using 'pokejoin'"
+    });
+}
+
 function getUserScore(userID, channelID) {
 
-    if (userExists(userID) == false) { return }
+    if (userExists(userID) == false) { askPlayerToJoinList(userID, channelID); return }
 
     bot.sendMessage({
         to: channelID,
@@ -142,6 +149,7 @@ function setUpGuessTimer() {
 }
 
 function userExists(userID) {
+    if (currentQuizPlayers == null) { return false }
     return currentQuizPlayers[userID] != null
 }
 

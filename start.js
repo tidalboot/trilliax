@@ -241,7 +241,9 @@ function addUserToQuizList(userID, user, channelID) {
 
     console.log("Attempting to add trainer - " + userID + " to trainer list")
 
+    console.log("Currentr quiz players are " + currentQuizPlayers)
     if (currentQuizPlayers == null) { return }
+    console.log("Currentr id is " + currentQuizPlayers[userID])
     if (currentQuizPlayers[userID] != null) { return }
 
     currentQuizPlayers[userID] = 

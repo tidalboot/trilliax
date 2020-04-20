@@ -13,8 +13,8 @@ let testingChannel = "700717192072921088"
 let generalChannel = "620667360994394123"
 var channelToUse = generalChannel
 
-var minimumSpawnTime = 6000
-var maximumSpawnTime = minimumSpawnTime * 6
+var minimumSpawnTime = 180000
+var maximumSpawnTime = minimumSpawnTime * 2
 
 var pokemonSpawned
 var currentQuizPlayers
@@ -118,7 +118,7 @@ function getLeaderboard(channelID) {
 
 function setUpSpawnTimer() {
 
-    var nextSpawnTime = (Math.floor(Math.random() * Math.floor(minimumSpawnTime)) + maximumSpawnTime) * 1000
+    var nextSpawnTime = (Math.floor(Math.random() * Math.floor(minimumSpawnTime)) + maximumSpawnTime)
 
     console.log("Next pokemon will spawn in " + nextSpawnTime / 1000 + " seconds")
     
